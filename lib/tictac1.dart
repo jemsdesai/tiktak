@@ -25,6 +25,7 @@ class tictac1 extends StatelessWidget {
       _ct.cnt.value=1;
     }
     win() {
+
       if (_ct.grid[0] == p1 && _ct.grid[1] == p1 && _ct.grid[2] == p1 ||
           _ct.grid[3] == p1 && _ct.grid[4] == p1 && _ct.grid[5] == p1 ||
           _ct.grid[6] == p1 && _ct.grid[7] == p1 && _ct.grid[8] == p1 ||
@@ -61,7 +62,11 @@ class tictac1 extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.height*0.1,
               width: double.infinity,
-              child: Obx(() => Text("${_ct.status}",style: TextStyle(fontSize: 20,color: Colors.white))),
+              child: Container(
+                  alignment: Alignment.center,
+                  color: Colors.black,
+
+                  child: Obx(() => Text("${_ct.status}",style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold)))),
             ),
             Container(
               height: MediaQuery.of(context).size.height*0.8,
@@ -80,7 +85,7 @@ class tictac1 extends StatelessWidget {
                       child: Obx(() => Text(
                         "${_ct.grid[index]}",
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 30, color: Colors.white),
+                        style: TextStyle(fontSize: 50, color: Colors.white),
                       )),
                       alignment: Alignment.center,
                       margin: EdgeInsets.all(10),
